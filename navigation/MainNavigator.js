@@ -41,7 +41,7 @@ export default function MainNavigator() {
         options={{
           tabBarLabel: 'Help',
           tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name='help' color={color} size={help} />
+            <MaterialIcons name='help' color={color} size={26} />
           ),
         }}
       />
