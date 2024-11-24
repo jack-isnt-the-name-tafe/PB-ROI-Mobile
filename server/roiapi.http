@@ -73,7 +73,7 @@ Content-Type: application/json
     "id": 6,
     "name": "Updated Person",
     "phone": "0987654321",
-    "departmentId": 0,
+    "departmentId": 1,
     "street": "456 Elm St",
     "city": "Othertown",
     "state": "OT",
