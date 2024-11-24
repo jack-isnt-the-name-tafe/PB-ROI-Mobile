@@ -88,6 +88,20 @@ export default function PersonEditScreen(props) {
     }
   }
 
+  async function handleSubmit() {
+    try {
+      if (id === -1) {
+        await addPerson(person);
+      } else {
+        await updatePerson(id, person);
+      }
+      props.navigation.goBack();
+    } catch (err) {
+      console.error(err);
+      setError("Failed to save data.");
+    }
+  };
+
   return (
     <Surface style={{flex:1, justifyContent: 'center', alignItems: 'center'}}>
       <Text variant='displaySmall'>Person Edit Screen</Text>
