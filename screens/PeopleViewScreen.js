@@ -40,7 +40,7 @@ export default function PeopleViewScreen(props) {
       function showPersonViewScreen(id) {
         props.navigation.navigate("PersonViewScreen", { id: id });
       }
-      function showAddPerson(id) {
+      function showAddPerson() {
         props.navigation.navigate("PersonEditScreen", { id: -1 });
       }
       function showPersonEditScreen(id) {
@@ -114,7 +114,7 @@ export default function PeopleViewScreen(props) {
             <View style={{ flex: 1, marginLeft: 10, padding: 10 }}>
               { /* Main Content */}
               <Text variant="titleMedium">{person.name}</Text>
-              <Text variant="titleMedium">{person.Department.name}</Text>
+              <Text variant="titleSmall">{person.Department.name}</Text>
               <Text variant="titleMedium">{person.phone}</Text>
             </View>
             <View>

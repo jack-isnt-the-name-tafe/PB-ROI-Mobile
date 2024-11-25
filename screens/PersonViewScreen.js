@@ -9,6 +9,7 @@ import { fetchPersonById } from '../utils/api';
 export default function PersonViewScreen(props) {
 
   const isFocused = useIsFocused();
+  theme = useTheme();
   const { id } = props.route.params;
 
   const [person, setPerson] = useState({});
@@ -32,25 +33,87 @@ export default function PersonViewScreen(props) {
     }
   }, [isFocused]);
 
+  {/*If the person's data isn't loaded yet*/}
+  if (Object.keys(person).length === 0) {
+    return (
+      <View style={{ flex: 1, justifyContent: "center" }}>
+        <Text variant="titleMedium">Loading Staff Details...</Text>
+      </View>
+    );
+  }
+
   // #region Navigation
     function showPeopleViewScreen() {
       props.navigation.navigate("PeopleViewScreen");
     }
   // #endregion
 
-
   return (
-    <Surface style={{flex:1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text variant='displaySmall'>Person View Screen</Text>
-      <Text>Employee ID: {id}</Text>
-      <Text>Name: {person?.name}</Text>
-      <Text>Phone Number: {person?.phone}</Text>
-      <Text>Address: {person?.street} {person?.city}, {person?.state} {person?.zip} {person?.country}</Text>
-      <Text>Department: {person?.Department?.name}</Text>
-
-      <Button mode="contained" icon="arrow-left" onPress={() => showPeopleViewScreen()}>
-        Go Back
-      </Button>
+    <Surface style={{ flex: 1, padding: 16 }}>
+      <Text
+        variant="headlineLarge"
+        style={{
+          marginHorizontal: 10,
+          marginBottom: 24,
+          fontWeight: "bold",
+          color: theme.colors.primary,
+        }}
+      >
+        {person?.name}'s Details
+      </Text>
+      <View style={{ flex: 1, marginTop: 24 }}>
+        {[
+          { label: "Phone:", value: person?.phone },
+          { label: "Street:", value: person?.street },
+          { label: "City:", value: person?.city },
+          { label: "State:", value: person?.state },
+          { label: "Zip:", value: person?.zip },
+          { label: "Country:", value: person?.country },
+          { label: "Department:", value: person?.Department?.name },
+        ].map(({ label, value }, index) => (
+          <View
+            key={index}
+            style={{ marginBottom: 20, paddingHorizontal: 12 }}
+          >
+            <Text
+              variant="bodyMedium"
+              style={{
+                fontWeight: "bold",
+                marginBottom: 6,
+                color: "#5D5D5D",
+                fontSize: 16,
+              }}
+            >
+              {label}
+            </Text>
+            <Text
+              variant="bodyMedium"
+              style={{
+                color: "#2C3E50",
+                fontSize: 14,
+                lineHeight: 22,
+                paddingBottom: 10,
+                borderBottomWidth: 1,
+                borderBottomColor: "#BDC3C7",
+              }}
+            >
+              {value}
+            </Text>
+          </View>
+        ))}
+      </View>
+      <View style={{ padding: 10 }}>
+        <Button
+          mode="contained"
+          icon="keyboard-return"
+          onPress={showPeopleViewScreen}
+          style={{
+            width: "100%",
+          }}
+        >
+          Go Back
+        </Button>
+      </View>
     </Surface>
   )
 }
