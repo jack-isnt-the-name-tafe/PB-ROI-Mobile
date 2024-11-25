@@ -1,0 +1,8 @@
+List of Functional Requirements
+UI Prototype with Resolution & Screenshots
+Client Confirmation Email
+Define the Technical UI Requirements (Screenshot, Description, Functions (reason of screen), Actions the user can take, Components, Events (interactive elements), Inputs/Outputs (data))
+Version Control System; Screenshots: First & last screens of installing git, github page of project, 
+Testing Checklist
+Team Member Communication
+Instructions on Installing the Android APK
