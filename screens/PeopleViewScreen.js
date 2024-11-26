@@ -100,9 +100,10 @@ export default function PeopleViewScreen(props) {
               flexDirection: "row",
               marginHorizontal: 10,
               marginTop: 10,
-              backgroundColor: theme.colors.elevation.level2,
+              borderColor: theme.colors.primary,
+              borderWidth: 2,
               alignItems: "center",
-              borderRadius: 5,
+              borderRadius: 10,
             }}
           >
             <View style={{ alignItems: "center", justifyContent: "center", paddingLeft:10 }}>
@@ -113,7 +114,7 @@ export default function PeopleViewScreen(props) {
             </View>
             <View style={{ flex: 1, marginLeft: 10, padding: 10 }}>
               { /* Main Content */}
-              <Text variant="titleMedium">{person.name}</Text>
+              <Text variant="titleMedium" style={{fontWeight: "bold"}}>{person.name}</Text>
               <Text variant="titleSmall">{person.Department.name}</Text>
               <Text variant="titleMedium">{person.phone}</Text>
             </View>
