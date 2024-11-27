@@ -13,8 +13,15 @@ import HelpScreen from '../screens/HelpScreen';
 const Tab = createMaterialBottomTabNavigator();
 
 export default function MainNavigator() {
+
+  const screenOptions = {
+    tabBarLabelStyle:{
+      fontFamily: "Trebuchet MS",
+    }
+  };
+
   return (
-    <Tab.Navigator>
+    <Tab.Navigator {...{ screenOptions }}>
       <Tab.Screen
         name='HomeScreen'
         component={HomeScreen}
@@ -48,7 +55,3 @@ export default function MainNavigator() {
       </Tab.Navigator>
   );
 }
-
-const styles = StyleSheet.create({
-
-});

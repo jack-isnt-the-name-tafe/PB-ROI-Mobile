@@ -18,7 +18,7 @@ export default function PersonViewScreen(props) {
 
   const fetchData = async () => {
     try {
-      const data = await fetchPersonById(id);
+      const data = await fetchPersonById(id, setOffline);
       setPerson(data);
     } catch (err) {
       console.error(err);
@@ -37,7 +37,7 @@ export default function PersonViewScreen(props) {
   if (Object.keys(person).length === 0) {
     return (
       <View style={{ flex: 1, justifyContent: "center" }}>
-        <Text variant="titleMedium">Loading Staff Details...</Text>
+        <Text variant="titleMedium" style={{fontFamily: "Trebuchet MS, Calibri, Arial, sans-serif",}} >Loading Staff Details...</Text>
       </View>
     );
   }
@@ -57,6 +57,7 @@ export default function PersonViewScreen(props) {
           marginBottom: 24,
           fontWeight: "bold",
           color: theme.colors.primary,
+          fontFamily: "Trebuchet MS, Calibri, Arial, sans-serif",
         }}
       >
         {person?.name}'s Details
@@ -82,6 +83,7 @@ export default function PersonViewScreen(props) {
                 marginBottom: 6,
                 color: "#5D5D5D",
                 fontSize: 16,
+                fontFamily: "Trebuchet MS, Calibri, Arial, sans-serif",
               }}
             >
               {label}
@@ -95,6 +97,7 @@ export default function PersonViewScreen(props) {
                 paddingBottom: 10,
                 borderBottomWidth: 1,
                 borderBottomColor: "#BDC3C7",
+                fontFamily: "Trebuchet MS, Calibri, Arial, sans-serif",
               }}
             >
               {value}
@@ -109,6 +112,7 @@ export default function PersonViewScreen(props) {
           onPress={showPeopleViewScreen}
           style={{
             width: "100%",
+            fontFamily: "Trebuchet MS, Calibri, Arial, sans-serif",
           }}
         >
           Go Back

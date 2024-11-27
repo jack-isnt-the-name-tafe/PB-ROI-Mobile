@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {Avatar, Card, IconButton, FAB, Snackbar, TextInput, Dialog, Portal, Button, Text, Surface, Divider, Searchbar, useTheme } from "react-native-paper";
+import {Avatar, Card, IconButton, FAB, Snackbar, TextInput, Dialog, Portal, Button, Text, Surface, Divider, Searchbar, useTheme, Switch } from "react-native-paper";
 import {View, Image, TouchableOpacity, StyleSheet, ScrollView, ActivityIndicator} from "react-native";
 // import { TouchableOpacity } from "react-native-gesture-handler";
 import { useIsFocused } from "@react-navigation/native";
@@ -12,6 +12,7 @@ export default function HelpScreen(props) {
   
   const [offline, setOffline] = useState(false);
   const [error, setError] = useState(null);
+  const [isSwitchOn, setIsSwitchOn] = useState(false);
 
   return (
     <Surface style={{flex:1, padding: 16}} mode="flat" elevation={1}>
@@ -22,10 +23,15 @@ export default function HelpScreen(props) {
           marginBottom: 24,
           fontWeight: "bold",
           color: theme.colors.primary,
+          fontFamily: "Trebuchet MS, Calibri, Arial, sans-serif",
         }}
       >
         Help
       </Text>
+      <View style={{flexDirection: 'row', paddingVertical: 10}}>
+        <Text variant="bodyMedium" style={{fontFamily: "Trebuchet MS, Calibri, Arial, sans-serif",}}>Font Size </Text>
+        <Switch value={isSwitchOn} onValueChange={() => setIsSwitchOn(!isSwitchOn)}/>
+      </View>
       <ScrollView style={{flex: 1}}>
         {
           [
@@ -44,8 +50,8 @@ export default function HelpScreen(props) {
             }}
             key={index}
             >
-              <Text variant="titleLarge">{index + 1}. {title}</Text>
-              <Text variant="bodyMedium">{body}</Text>
+              <Text variant="titleLarge" style={{fontFamily: "Trebuchet MS, Calibri, Arial, sans-serif",}} >{index + 1}. {title}</Text>
+              <Text variant="bodyMedium" style={{fontFamily: "Trebuchet MS, Calibri, Arial, sans-serif", fontSize: isSwitchOn ? 16 : 14}}>{body}</Text>
             </View>
           ))
         }
