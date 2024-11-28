@@ -182,13 +182,13 @@ export default function PersonEditScreen(props) {
               mode="outlined"
               icon="keyboard-return"
               onPress={showPeopleViewScreen}
-              style={{ fontFamily: "Trebuchet MS, Calibri, Arial, sans-serif", }}
+              labelStyle={{ fontFamily: "Trebuchet MS, Calibri, Arial, sans-serif", }}
             >
               Cancel
             </Button>
           </View>
           <View style={{ flex: 1, marginHorizontal: 10 }}>
-            <Button mode="contained" icon="update" onPress={handleSubmit} style={{ fontFamily: "Trebuchet MS, Calibri, Arial, sans-serif", }}>
+            <Button mode="contained" icon="update" onPress={handleSubmit} labelStyle={{fontFamily: "Trebuchet MS, Calibri, Arial, sans-serif",}}>
               Update
             </Button>
           </View>

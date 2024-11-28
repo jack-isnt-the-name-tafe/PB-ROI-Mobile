@@ -112,6 +112,8 @@ export default function PersonViewScreen(props) {
           onPress={showPeopleViewScreen}
           style={{
             width: "100%",
+          }}
+          labelStyle={{
             fontFamily: "Trebuchet MS, Calibri, Arial, sans-serif",
           }}
         >
