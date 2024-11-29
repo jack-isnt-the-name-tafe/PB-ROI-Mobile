@@ -108,7 +108,7 @@ export default function PersonViewScreen(props) {
       <View style={{ padding: 10 }}>
         <Button
           mode="contained"
-          icon="keyboard-return"
+          icon="arrow-left"
           onPress={showPeopleViewScreen}
           style={{
             width: "100%",

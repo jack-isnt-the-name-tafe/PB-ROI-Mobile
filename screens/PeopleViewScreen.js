@@ -123,7 +123,7 @@ export default function PeopleViewScreen(props) {
             <View style={{ alignItems: "center", justifyContent: "center", paddingLeft:10 }}>
               { /* Avatar */}
               <TouchableOpacity onPress={() => showPersonViewScreen(person.id)}>
-                <Avatar.Icon size={48} icon="folder-open-outline" />
+                <Avatar.Icon size={48} icon="magnify" />
               </TouchableOpacity>
             </View>
             <View style={{ flex: 1, marginLeft: 10, padding: 10 }}>

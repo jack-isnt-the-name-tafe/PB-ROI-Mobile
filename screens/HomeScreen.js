@@ -41,6 +41,7 @@ export default function HomeScreen(props) {
         <Divider style={{margin: 20, borderColor: theme.colors.primary}}/>
         <Text variant="titleMedium" style={{fontWeight: "bold", marginLeft: "auto", marginRight: "auto", fontFamily: "Trebuchet MS, Calibri, Arial, sans-serif",}}>Remaining Leave Days: 10</Text>
         <Divider style={{margin: 20, borderColor: theme.colors.primary}}/>
+        <Text variant="titleMedium" style={{fontWeight: "bold", marginLeft: "auto", marginRight: "auto", fontFamily: "Trebuchet MS, Calibri, Arial, sans-serif",}}>Application developed by Patrick Brown</Text>
       </View>
     </Surface>
   )

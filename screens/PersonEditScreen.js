@@ -180,7 +180,7 @@ export default function PersonEditScreen(props) {
           <View style={{ flex: 1, marginHorizontal: 10 }}>
             <Button
               mode="outlined"
-              icon="keyboard-return"
+              icon="arrow-left"
               onPress={showPeopleViewScreen}
               labelStyle={{ fontFamily: "Trebuchet MS, Calibri, Arial, sans-serif", }}
             >
@@ -188,8 +188,8 @@ export default function PersonEditScreen(props) {
             </Button>
           </View>
           <View style={{ flex: 1, marginHorizontal: 10 }}>
-            <Button mode="contained" icon="update" onPress={handleSubmit} labelStyle={{fontFamily: "Trebuchet MS, Calibri, Arial, sans-serif",}}>
-              Update
+            <Button mode="contained" icon="check" onPress={handleSubmit} labelStyle={{fontFamily: "Trebuchet MS, Calibri, Arial, sans-serif",}}>
+              {id === -1 ? "Add" : "Update"}
             </Button>
           </View>
         </View>
