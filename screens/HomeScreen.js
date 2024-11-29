@@ -12,6 +12,12 @@ export default function HomeScreen(props) {
   
   const [offline, setOffline] = useState(false);
   const [error, setError] = useState(null);
+  const [logoMono, setLogoMono] = useState(false);
+
+  const logoImage = {
+    logo: require("../assets/roi-logo.jpg"),
+    mono: require("../assets/roi-logo-monochrome.jpg"),
+  }
 
   return (
     <Surface style={{flex:1, padding: 16}}>
@@ -33,7 +39,12 @@ export default function HomeScreen(props) {
       </View>
       <View>
         <Divider style={{margin: 20, borderColor: theme.colors.primary}}/>
-        <Image source={require("../assets/roi-logo.jpg")} style={{width: 305, height: 159, marginLeft: "auto", marginRight: "auto"}}/>
+        <TouchableOpacity onPressOut={() => {setLogoMono(!logoMono)}}>
+          <Image 
+            source={logoMono ? logoImage.mono : logoImage.logo} 
+            style={{width: 305, height: 159, marginLeft: "auto", marginRight: "auto"}} 
+          />
+        </TouchableOpacity>
         <Divider style={{margin: 20, borderColor: theme.colors.primary}}/>
       </View>
       <View>
